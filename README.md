@@ -1,2 +1,2 @@
-# MinorProject---Car-Parking-Management-System
+# MinorProject01-CarParkingManagementSystem
 Minor project Github repository
