@@ -1,0 +1,46 @@
+show databases;  
+create database minorproject1;   //creating database minorproject1
+use minorproject1;
+
+//creating table UserDetails in database minorproject1
+create table UserDetails(Name varchar(30),MobileNo int, CarPlateNo int, EntryDate varchar(20),EntryTime varchar(10));
+
+//queries for table UserDetails
+select * from UserDetails;
+alter table UserDetails drop column SlotNo ;
+alter table UserDetails add primary key(CarPlateNo);
+update UserDetails set EntryTime = date_format(UserDetails.EntryTime, '%l:%i %p');
+Alter table UserDetails modify column EntryDate varchar(20) ;
+Alter table UserDetails modify column EntryTime varchar(20) ;
+delete from UserDetails where CarPlateNo=1;
+
+
+
+// creating table Slots database minorproject1
+create table Slots(SlotName varchar(10), SlotNo int, Distance int);
+select * from Slots;
+
+//insering values in table Slots
+Insert into Slots(SlotName, SlotNo, Distance) values ('s1',null,8);    
+Insert into Slots(SlotName, SlotNo, Distance) values ('s2',null,4);    
+Insert into Slots(SlotName, SlotNo, Distance) values ('s3',null,9);    
+Insert into Slots(SlotName, SlotNo, Distance) values ('s4',null,5);    
+Insert into Slots(SlotName, SlotNo, Distance) values ('s5',null,11);   
+Insert into Slots(SlotName, SlotNo, Distance) values ('s6',null,7);    
+Insert into Slots(SlotName, SlotNo, Distance) values ('s7',null,12);    
+Insert into Slots(SlotName, SlotNo, Distance) values ('s8',null,8);    
+Insert into Slots(SlotName, SlotNo, Distance) values ('s9',null,4);     
+Insert into Slots(SlotName, SlotNo, Distance) values ('s10',null,8);  
+Insert into Slots(SlotName, SlotNo, Distance) values ('s11',null,4);  
+Insert into Slots(SlotName, SlotNo, Distance) values ('s12',null,9);  
+Insert into Slots(SlotName, SlotNo, Distance) values ('s13',null,7);  
+Insert into Slots(SlotName, SlotNo, Distance) values ('s14',null,11); 
+Insert into Slots(SlotName, SlotNo, Distance) values ('s15',null,8);  
+Insert into Slots(SlotName, SlotNo, Distance) values ('s16',null,12); 
+
+//queries for table Slots
+drop table Slots;
+alter table Slots add primary key(SlotName);
+update Slots set Distance = 5 where SlotName = 's11' ; 
+select SlotName,Distance from Slots where SlotNo is null;
+select SlotName from Slots where Distance=4 and SlotNo is null;
